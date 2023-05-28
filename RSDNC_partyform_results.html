@@ -9,10 +9,11 @@
 <title>Ticket form</title>
 	<style>
 		body{
-			background-image: url(https://cdn.discordapp.com/attachments/1102330446483833003/1112375319337373696/Lukakoe_minimalist_poster_art_rooftop_party_childhood_drawing_o_ad028063-a47e-44d1-b6f6-43b394e9b406.png);
+			background-image: url(https://cdn.discordapp.com/attachments/1102330446483833003/1112397932336005241/Lukakoe_minimalist_poster_art_rooftop_party_childhood_drawing_o_848bd254-178e-430f-8f83-c9ca7ed7bd4a.png);
 			background-repeat:repeat;
 			-webkit-background-size: 100%;
 			background-size: 100%;
+			max-width:100%;
 		}
 		
 		.container{
@@ -59,28 +60,24 @@
 			box-shadow: 0px 0px 20px 10px rgba(246,178,45,1.00);
 			padding: 7px 24px;
 		}
+		
 	</style>
 </head>
 
 <body>
 <div class="container">
 	<div class="column">
-			<form action="RSDNC_partyform_results">
-				<div class="form-group">
-			   		<label for="Name"></label>
-			    	<input type="text" class="form-control" id="Name" placeholder="Enter name">
-			  	</div>
-			  	<div class="form-group">
-			    	<label for="exampleInputPassword1"></label>
-			    	<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-		      	</div>
-			  	<div style="margin-top:20px">
-			  		<button type="submit" class="btn btn-primary">Submit</button>
-				</div>
-		  </form>
+			<p style="color:#FFFFFF; font-size: 40px; font-weight: bold; font-family: Baskerville, 'Palatino Linotype', Palatino, 'Century Schoolbook L', 'Times New Roman', 'serif'">See you there !</p>
     </div>
 </div>
 	
+<script>
+	const resultsList = document.getElementById('results')
+	new URLSearchParams(window.location.search).forEach((value,name) => {
+		resultsList.append('$(name): $(value)')
+		resultsList.append(document.createElement('br'))
+	})
+</script>
 	
 </body>
 </html>
