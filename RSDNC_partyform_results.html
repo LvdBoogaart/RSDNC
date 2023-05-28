@@ -78,11 +78,11 @@
 	
 <script>
 	var urlParams = new URLSearchParams(window.location.search);
-	var name = urlParams.get("name");
+	var Name = urlParams.get("Name");
 	
 	if (name) {
 		var welcomeHeading = document.getElementById("thank-you");
-		welcomeHeading.textContent = "See you there " + name + "!";
+		welcomeHeading.textContent = "See you there " + Name + "!";
 	}
 </script>
 	
