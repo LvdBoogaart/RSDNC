@@ -76,12 +76,18 @@
 		      	</div>
 			  	<div style="margin-top:20px">
 					<a href="https://lvdboogaart.github.io/RSDNC/RSDNC_partyform_results.html">
-			  		<button type="submit" class="btn btn-primary">Submit</button>
+			  		<button type="submit" class="btn btn-primary" onclick="submitForm()">Submit</button>
 					</a>
 				</div>
 		  </form>
     </div>
 </div>
+	<script>
+		function submitForm() {
+			var name = document.getElementById("name").value;
+			location.href = "RSDNC/RSDNC_partyform_results.html?name=" + encodeURIComponent(name);
+		}
+	</script>
 	
 	
 </body>

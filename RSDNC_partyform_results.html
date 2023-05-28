@@ -71,16 +71,19 @@
 <body>
 <div class="container">
 	<div class="column">
-			<p style="color:#FFFFFF; font-size: 40px; font-weight: bold; font-family: Baskerville, 'Palatino Linotype', Palatino, 'Century Schoolbook L', 'Times New Roman', 'serif'">See you there !</p>
+		
+			<p style="color:#FFFFFF; font-size: 40px; font-weight: bold; font-family: Baskerville, 'Palatino Linotype', Palatino, 'Century Schoolbook L', 'Times New Roman', 'serif'" id="thank-you"></p>
     </div>
 </div>
 	
 <script>
-	const resultsList = document.getElementById('results')
-	new URLSearchParams(window.location.search).forEach((value,name) => {
-		resultsList.append('$(name): $(value)')
-		resultsList.append(document.createElement('br'))
-	})
+	var urlParams = new URLSearchParams(window.location.search);
+	var name = urlParams.get("name");
+	
+	if (name) {
+		var welcomeHeading = document.getElementById("thank-you");
+		welcomeHeading.textContent = "See you there " + name + "!";
+	}
 </script>
 	
 </body>
