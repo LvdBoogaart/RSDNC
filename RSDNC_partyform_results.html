@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- utf-8 works for most cases -->
+<meta name="viewport" content="width=device-width">
+<!-- Forcing initial-scale shouldn't be necessary -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Ticket form</title>
+	<style>
+		body{
+			background-image: url(https://cdn.discordapp.com/attachments/1102330446483833003/1112375319337373696/Lukakoe_minimalist_poster_art_rooftop_party_childhood_drawing_o_ad028063-a47e-44d1-b6f6-43b394e9b406.png);
+			background-repeat:repeat;
+			-webkit-background-size: 100%;
+			background-size: 100%;
+		}
+		
+		.container{
+			width: 100%;
+			align-content: center;
+			position: absolute;
+			top: 40%;
+		}
+		
+		.column {
+			width:100%;
+			max-width:600;
+			text-align:center;
+		}
+		
+		.form-group{
+			padding:10px;
+			align-content:center;
+			
+		}
+		
+		.form-control{
+			font-size:22px;
+		}
+	
+		.btn{
+			font-size: 22px;
+			padding: 5px 20px;
+			background-color: rgba(74,142,143,1.00);
+			border-color: rgba(74,142,143,1.00);
+			border-style: solid;
+			border-width: medium;
+			color: rgba(246,178,45,1.00);
+			text-shadow: 0px 0px 2px rgba(245,218,148,0.2);
+			transition: all 100ms ease-in;
+		}
+		
+		
+		.btn:hover {
+			color: rgba(245,218,148,1.00) !important;
+			text-shadow: 0px 0px 3px rgba(246,178,45,1.00);
+			background: rgba(74,142,143,1.00) !important;
+			border-color: rgba(74,142,143,1.00) !important;
+			box-shadow: 0px 0px 20px 10px rgba(246,178,45,1.00);
+			padding: 7px 24px;
+		}
+	</style>
+</head>
+
+<body>
+<div class="container">
+	<div class="column">
+			<form action="RSDNC_partyform_results">
+				<div class="form-group">
+			   		<label for="Name"></label>
+			    	<input type="text" class="form-control" id="Name" placeholder="Enter name">
+			  	</div>
+			  	<div class="form-group">
+			    	<label for="exampleInputPassword1"></label>
+			    	<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+		      	</div>
+			  	<div style="margin-top:20px">
+			  		<button type="submit" class="btn btn-primary">Submit</button>
+				</div>
+		  </form>
+    </div>
+</div>
+	
+	
+</body>
+</html>
