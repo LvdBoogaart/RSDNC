@@ -65,29 +65,29 @@
 <body>
 <div class="container">
 	<div class="column">
-			<form action="https://lvdboogaart.github.io/RSDNC/RSDNC_partyform_results.html" method="GET">
+			<form action="RSDNC_partyform_results.html" method="get">
 				<div class="form-group">
-			   		<label for="Name"></label>
-			    	<input type="text" class="form-control" id="Name" placeholder="Enter name">
+			   		<label for="name"></label>
+			    	<input name="name" type="text" class="form-control" id="name" placeholder="Enter name">
 			  	</div>
-			  	<div class="form-group">
+			  	<!--div class="form-group">
 			    	<label for="exampleInputPassword1"></label>
-			    	<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-		      	</div>
+			    	<input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+		      	</div-->
 			  	<div style="margin-top:20px">
-					<a href="https://lvdboogaart.github.io/RSDNC/RSDNC_partyform_results.html">
-			  		<button type="submit" class="btn btn-primary" onclick="submitForm()">Submit</button>
-					</a>
+					<!--a href="./RSDNC_partyform_results.html"-->
+			  		<button type="submit" class="btn">Submit</button>
+					<!--/a-->
 				</div>
 		  </form>
     </div>
 </div>
-	<script>
+	<!--script>
 		function submitForm() {
-			var Name = document.getElementById("Name").value;
+			var name = document.getElementById("name").value;
 			location.href = "RSDNC/RSDNC_partyform_results.html?Name=" + encodeURIComponent(Name);
 		}
-	</script>
+	</script-->
 	
 	
 </body>

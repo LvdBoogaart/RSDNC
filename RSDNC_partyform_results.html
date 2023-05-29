@@ -72,18 +72,17 @@
 <div class="container">
 	<div class="column">
 		
-			<p style="color:#FFFFFF; font-size: 40px; font-weight: bold; font-family: Baskerville, 'Palatino Linotype', Palatino, 'Century Schoolbook L', 'Times New Roman', 'serif'" id="thank-you"></p>
+			<p style="color:#FFFFFF; font-size: 40px; font-weight: bold; font-family: Baskerville, 
+			'Palatino Linotype', Palatino, 'Century Schoolbook L', 'Times New Roman', 'serif'" id="output">
+			</p>
     </div>
 </div>
 	
 <script>
-	var urlParams = new URLSearchParams(window.location.search);
-	var Name = urlParams.get("Name");
-	
-	if (name) {
-		var welcomeHeading = document.getElementById("thank-you");
-		welcomeHeading.textContent = "See you there " + Name + "!";
-	}
+const urlParams = new URLSearchParams(window.location.search);
+  const name = urlParams.get('name');
+
+  document.getElementById('output').innerHTML = `See you there ${name}!`;
 </script>
 	
 </body>
