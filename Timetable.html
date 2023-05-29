@@ -2,431 +2,618 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Timetable</title>
-  <style>
-    :root {
-      --slot-count: 20;
-      --header-slot-count: 10;
-      --slot-width: 7rem;
-      --slot-gap: .1rem;
-      --color-white: white;
-      --color-100: #ffffff;
-      --color-200: #ffffff;
-      --color-500: #000000;
-      --color-800: #000000;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Timetable</title>
+    <style>
+        :root {
+            --slot-count: 20;
+            --header-slot-count: 10;
+            --slot-width: 7rem;
+            --slot-gap: .1rem;
+            --color-white: white;
+            --color-100: #ffffff;
+            --color-200: #ffffff;
+            --color-500: #000000;
+            --color-800: #000000;
+        }
 
-    * {
-      box-sizing: border-box;
-      font-family: sans-serif;
-    }
+        * {
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
 
-    html {
-      font-size: 16px;
-      padding: 0;
-      margin: 0;
-      width: 100%;
-      overflow-y:hidden;
-	  height: 100%;
-    }
+        html {
+            font-size: 16px;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            overflow-y: hidden;
+            height: 100%;
+        }
 
-    body{
-      overflow: auto;
-	  height:100%;
-      background-image:url(https://cdn.discordapp.com/attachments/1102330446483833003/1112800958737563699/Lukakoe_minimalist_poster_art_rooftop_party_childhood_drawing_o_b774f8db-e98d-40a3-aad9-064fb034f0fe.png);
-    }
+        body {
+            overflow: auto;
+            height: 100%;
+            background-image: url(https://cdn.discordapp.com/attachments/1102330446483833003/1112800958737563699/Lukakoe_minimalist_poster_art_rooftop_party_childhood_drawing_o_b774f8db-e98d-40a3-aad9-064fb034f0fe.png);
+        }
 
-    body,
-    .container {
-      /*width: calc((var(--slot-count) + 1) * var(--slot-width) + (var(--slot-count) - 1) * var(--slot-gap)); */
-      width: fit-content;
-    }
+        body,
+        .container {
+            /*width: calc((var(--slot-count) + 1) * var(--slot-width) + (var(--slot-count) - 1) * var(--slot-gap)); */
+            width: fit-content;
+        }
 
-    .container {
-      margin-bottom: var(--slot-width);
-    }
+        .container {
+            margin-bottom: var(--slot-width);
+        }
 
-    .timeline {
-      display: grid;
-      grid-template-columns: [t-1400] 7rem [t-1430] 7rem [t-1500] 7rem [t-1530] 7rem [t-1600] 7rem [t-1630] 7rem [t-1700] 7rem [t-1730] 7rem [t-1800] 7rem [t-1830] 7rem [t-1900] 7rem [t-1930] 7rem [t-2000] 7rem [t-2030] 7rem [t-2100] 7rem [t-2130] 7rem [t-2200] 7rem [t-2230] 7rem [t-2300] 7rem [t-2330] 7rem [t-2400] 7rem [t-2430] 7rem [t-2500] 7rem [t-2550] 7rem [t-2600] 7rem [t-2650] 7rem [t-2700] 7rem [t-2750] 7rem [t-2800] 7rem [t-2850] 7rem [t-2900] 7rem [t-2950] 7rem [t-3000];
-      column-gap: var(--slot-gap);
-    }
+        .timeline {
+            display: grid;
+            grid-template-columns: [t-1400] 7rem [t-1430] 7rem [t-1500] 7rem [t-1530] 7rem [t-1600] 7rem [t-1630] 7rem [t-1700] 7rem [t-1730] 7rem [t-1800] 7rem [t-1830] 7rem [t-1900] 7rem [t-1930] 7rem [t-2000] 7rem [t-2030] 7rem [t-2100] 7rem [t-2130] 7rem [t-2200] 7rem [t-2230] 7rem [t-2300] 7rem [t-2330] 7rem [t-2400] 7rem [t-2430] 7rem [t-2500] 7rem [t-2550] 7rem [t-2600] 7rem [t-2650] 7rem [t-2700] 7rem [t-2750] 7rem [t-2800] 7rem [t-2850] 7rem [t-2900] 7rem [t-2950] 7rem [t-3000];
+            column-gap: var(--slot-gap);
+        }
 
-    .timeline-header {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, calc(2 * var(--slot-width)));
-      column-gap: calc(2 * var(--slot-gap));
-      position: sticky;
-      top: 0;
-      margin-bottom: .5rem;
-      z-index: 2;
-    }
+        .timeline-header {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, calc(2 * var(--slot-width)));
+            column-gap: calc(2 * var(--slot-gap));
+            position: sticky;
+            top: 0;
+            margin-bottom: .5rem;
+            z-index: 2;
+        }
 
-    .timeline-header-slot {
-      background-color: var(--color-800);
-      color: white;
-      opacity: 1;
-      padding: .25rem;
-    }
+        .timeline-header-slot {
+            background-color: var(--color-800);
+            color: white;
+            opacity: 1;
+            padding: .25rem;
+        }
 
-    .timeline-event {
-      background-color: var(--color-100);
-      padding: 0.5rem .25rem .5rem 3rem;
-      margin: .5rem 0;
-      position: relative;
-      color: var(--color-800);
-    }
+        .timeline-event {
+            background-color: var(--color-100);
+            padding: 0.5rem .25rem .5rem 3rem;
+            margin: .5rem 0;
+            position: relative;
+            color: var(--color-800);
+        }
 
-    .timeline-event::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      background-color: var(--color-500);
-      opacity: 1;
-      width: 2.5rem;
-      z-index: 1;
-    }
+        .timeline-event::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            background-color: var(--color-500);
+            opacity: 1;
+            width: 2.5rem;
+            z-index: 1;
+        }
 
-    .timeline-event::after {
-      content: "hh:mm";
-      display: block;
-      font-size: .85rem;
-    }
+        .timeline-event::after {
+            content: "hh:mm";
+            display: block;
+            font-size: .85rem;
+        }
 
-    .title {
-      padding: 0.5rem;
-      position: sticky;
-      display: inline;
-      left: 0;
-      font-size: 1rem;
-      margin: 0;
-      z-index: -1;
-      color: #ffffff;
-      
-    }
+        .title {
+            padding: 0.5rem;
+            position: sticky;
+            display: inline;
+            left: 0;
+            font-size: 1rem;
+            margin: 0;
+            z-index: 1;
+            color: #ffffff;
 
-    .title-wrapper {
-      display: block;
-      padding-top: 2rem;
-      border-top: 1px solid #FFFFFF;
-      opacity: 1;
-    }
+        }
 
-    .title-wrapper .title {
-    opacity:1;
-    }
+        .title-wrapper {
+            display: block;
+            padding-top: 2rem;
+            border-top: 1px solid #FFFFFF;
+            opacity: 1;
+        }
 
-    /* #region stage performances */
-    /* PAVILION */
+        .title-wrapper .title {
+            opacity: 1;
+        }
 
-    [data-event-id="101"] {
-      grid-row: 1;
-      grid-column: t-1400 / t-1600;
-    }
+        /* #region stage performances */
+        /* PAVILION */
 
-    [data-event-id="102"] {
-      grid-row: 1;
-      grid-column: t-1700 / t-1900;
-    }
+        [data-event-id="101"] {
+            grid-row: 1;
+            grid-column: t-1400 / t-1600;
+        }
 
-    [data-event-id="103"] {
-      grid-row: 1;
-      grid-column: t-2130 / t-2400;
-    }
+        [data-event-id="102"] {
+            grid-row: 1;
+            grid-column: t-1700 / t-1900;
+        }
 
-    [data-event-id="104"] {
-      grid-row: 1;
-      grid-column: t-2430 / t-3000;
-    }
+        [data-event-id="103"] {
+            grid-row: 1;
+            grid-column: t-2130 / t-2400;
+        }
 
-    /* APOLLO */
+        [data-event-id="104"] {
+            grid-row: 1;
+            grid-column: t-2430 / t-3000;
+        }
 
-    [data-event-id="201"] {
-      grid-row: 1;
-      grid-column: t-1400 / t-1500;
-    }
+        /* APOLLO */
 
-    [data-event-id="202"] {
-      grid-row: 1;
-      grid-column: t-1600 / t-1700;
-    }
+        [data-event-id="201"] {
+            grid-row: 1;
+            grid-column: t-1400 / t-1500;
+        }
 
-    [data-event-id="203"] {
-      grid-row: 1;
-      grid-column: t-1730 / t-1830;
-    }
+        [data-event-id="202"] {
+            grid-row: 1;
+            grid-column: t-1600 / t-1700;
+        }
 
-    [data-event-id="204"] {
-      grid-row: 1;
-      grid-column: t-2230 / t-2400;
-    }
+        [data-event-id="203"] {
+            grid-row: 1;
+            grid-column: t-1730 / t-1830;
+        }
 
-    /* ORANGE */
+        [data-event-id="204"] {
+            grid-row: 1;
+            grid-column: t-2230 / t-2400;
+        }
 
-    [data-event-id="301"] {
-      grid-row: 1;
-      grid-column: t-1600 / t-1700;
-    }
+        /* ORANGE */
 
-    [data-event-id="302"] {
-      grid-row: 1;
-      grid-column: t-1800 / t-1930;
-    }
+        [data-event-id="301"] {
+            grid-row: 1;
+            grid-column: t-1600 / t-1700;
+        }
 
-    [data-event-id="303"] {
-      grid-row: 1;
-      grid-column: t-2000 / t-2130;
-    }
+        [data-event-id="302"] {
+            grid-row: 1;
+            grid-column: t-1800 / t-1930;
+        }
 
-    [data-event-id="304"] {
-      grid-row: 1;
-      grid-column: t-2200 / t-2330;
-    }
+        [data-event-id="303"] {
+            grid-row: 1;
+            grid-column: t-2000 / t-2130;
+        }
 
-    [data-event-id="401"] {
-      grid-row: 1;
-      grid-column: t-1600 / t-1700;
-    }
+        [data-event-id="304"] {
+            grid-row: 1;
+            grid-column: t-2200 / t-2330;
+        }
 
-    [data-event-id="402"] {
-      grid-row: 1;
-      grid-column: t-1800 / t-1930;
-    }
+        [data-event-id="401"] {
+            grid-row: 1;
+            grid-column: t-1600 / t-1700;
+        }
 
-    [data-event-id="403"] {
-      grid-row: 1;
-      grid-column: t-2000 / t-2130;
-    }
+        [data-event-id="402"] {
+            grid-row: 1;
+            grid-column: t-1800 / t-1930;
+        }
 
-    [data-event-id="404"] {
-      grid-row: 1;
-      grid-column: t-2200 / t-2330;
-    }
+        [data-event-id="403"] {
+            grid-row: 1;
+            grid-column: t-2000 / t-2130;
+        }
 
-    [data-event-id="501"] {
-      grid-row: 1;
-      grid-column: t-1600 / t-1700;
-    }
+        [data-event-id="404"] {
+            grid-row: 1;
+            grid-column: t-2200 / t-2330;
+        }
 
-    [data-event-id="502"] {
-      grid-row: 1;
-      grid-column: t-1800 / t-1930;
-    }
+        [data-event-id="501"] {
+            grid-row: 1;
+            grid-column: t-1600 / t-1700;
+        }
 
-    [data-event-id="503"] {
-      grid-row: 1;
-      grid-column: t-2000 / t-2130;
-    }
+        [data-event-id="502"] {
+            grid-row: 1;
+            grid-column: t-1800 / t-1930;
+        }
 
-    [data-event-id="504"] {
-      grid-row: 1;
-      grid-column: t-2200 / t-2330;
-    }
+        [data-event-id="503"] {
+            grid-row: 1;
+            grid-column: t-2000 / t-2130;
+        }
 
-    [data-event-id="601"] {
-      grid-row: 1;
-      grid-column: t-1600 / t-1700;
-    }
+        [data-event-id="504"] {
+            grid-row: 1;
+            grid-column: t-2200 / t-2330;
+        }
 
-    [data-event-id="602"] {
-      grid-row: 1;
-      grid-column: t-1800 / t-1930;
-    }
+        [data-event-id="601"] {
+            grid-row: 1;
+            grid-column: t-1600 / t-1700;
+        }
 
-    [data-event-id="603"] {
-      grid-row: 1;
-      grid-column: t-2000 / t-2130;
-    }
+        [data-event-id="602"] {
+            grid-row: 1;
+            grid-column: t-1800 / t-1930;
+        }
 
-    [data-event-id="604"] {
-      grid-row: 1;
-      grid-column: t-2200 / t-2330;
-    }
+        [data-event-id="603"] {
+            grid-row: 1;
+            grid-column: t-2000 / t-2130;
+        }
 
-    [data-event-id="701"] {
-      grid-row: 1;
-      grid-column: t-1600 / t-1700;
-    }
+        [data-event-id="604"] {
+            grid-row: 1;
+            grid-column: t-2200 / t-2330;
+        }
 
-    [data-event-id="702"] {
-      grid-row: 1;
-      grid-column: t-1800 / t-1930;
-    }
+        [data-event-id="701"] {
+            grid-row: 1;
+            grid-column: t-1600 / t-1700;
+        }
 
-    [data-event-id="703"] {
-      grid-row: 1;
-      grid-column: t-2000 / t-2130;
-    }
+        [data-event-id="702"] {
+            grid-row: 1;
+            grid-column: t-1800 / t-1930;
+        }
 
-    [data-event-id="704"] {
-      grid-row: 1;
-      grid-column: t-2200 / t-2330;
-    }
+        [data-event-id="703"] {
+            grid-row: 1;
+            grid-column: t-2000 / t-2130;
+        }
 
-    [data-event-id="801"] {
-      grid-row: 1;
-      grid-column: t-1600 / t-1700;
-    }
+        [data-event-id="704"] {
+            grid-row: 1;
+            grid-column: t-2200 / t-2330;
+        }
 
-    [data-event-id="802"] {
-      grid-row: 1;
-      grid-column: t-1800 / t-1930;
-    }
+        [data-event-id="801"] {
+            grid-row: 1;
+            grid-column: t-1600 / t-1700;
+        }
 
-    [data-event-id="803"] {
-      grid-row: 1;
-      grid-column: t-2000 / t-2130;
-    }
+        [data-event-id="802"] {
+            grid-row: 1;
+            grid-column: t-1800 / t-1930;
+        }
 
-    [data-event-id="804"] {
-      grid-row: 1;
-      grid-column: t-2200 / t-2330;
-    }
+        [data-event-id="803"] {
+            grid-row: 1;
+            grid-column: t-2000 / t-2130;
+        }
 
-    [data-event-id="901"] {
-      grid-row: 1;
-      grid-column: t-1600 / t-1700;
-    }
+        [data-event-id="804"] {
+            grid-row: 1;
+            grid-column: t-2200 / t-2330;
+        }
 
-    [data-event-id="902"] {
-      grid-row: 1;
-      grid-column: t-1800 / t-1930;
-    }
+        [data-event-id="901"] {
+            grid-row: 1;
+            grid-column: t-1600 / t-1700;
+        }
 
-    [data-event-id="903"] {
-      grid-row: 1;
-      grid-column: t-2000 / t-2130;
-    }
+        [data-event-id="902"] {
+            grid-row: 1;
+            grid-column: t-1800 / t-1930;
+        }
 
-    [data-event-id="904"] {
-      grid-row: 1;
-      grid-column: t-2200 / t-2330;
-    }
+        [data-event-id="903"] {
+            grid-row: 1;
+            grid-column: t-2000 / t-2130;
+        }
 
-    /* #endregion */
-  </style>
+        [data-event-id="904"] {
+            grid-row: 1;
+            grid-column: t-2200 / t-2330;
+        }
+
+        .timetable-day {
+            border-bottom-style: solid;
+            border-bottom-color: #ffffff;
+            border-bottom-width: 1px;
+        }
+
+        .timetable-header {
+            background-color: #012345;
+        }
+
+        .timetable-content {
+            background-color: rgba(0, 0, 0, 0.2);
+
+        }
+
+        .day-header {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: #FFFFFF;
+            padding:1rem 0 0 1rem;
+        }
+
+.timetable-day .lines {position: relative;}
+.timetable-day .sublines {position: relative;}
+.timetable-day .line {position: absolute;}
+
+.timetable-day .lines .line:nth-child(0) {left: 0px;}
+.timetable-day .lines .line:nth-child(1) {left: 225.5px;}
+.timetable-day .lines .line:nth-child(2) {left: 452.5px;}
+.timetable-day .lines .line:nth-child(3) {left: 680px;}
+.timetable-day .lines .line:nth-child(4) {left: 908px;}
+.timetable-day .lines .line:nth-child(5) {left: 1135px;}
+.timetable-day .lines .line:nth-child(6) {left: 1362px;}
+.timetable-day .lines .line:nth-child(7) {left: 1590px;}
+.timetable-day .lines .line:nth-child(8) {left: 1816.5px;}
+.timetable-day .lines .line:nth-child(9) {left: 2044px;}
+.timetable-day .lines .line:nth-child(10) {left: 2270px;}
+.timetable-day .lines .line:nth-child(11) {left: 2498px;}
+.timetable-day .lines .line:nth-child(12) {left: 2725px;}
+.timetable-day .lines .line:nth-child(13) {left: 2952px;}
+.timetable-day .lines .line:nth-child(14) {left: 3180px;}
+.timetable-day .lines .line:nth-child(16) {left: 3407.5px;}
+
+
+.timetable-day .sublines .line:nth-child(0) {left: 0px;}
+.timetable-day .sublines .line:nth-child(1) {left: 112.75px;}
+.timetable-day .sublines .line:nth-child(2) {left: 339px;}
+.timetable-day .sublines .line:nth-child(3) {left: 566.25px;}
+.timetable-day .sublines .line:nth-child(4) {left: 794px;}
+.timetable-day .sublines .line:nth-child(5) {left: 1021.25px;}
+.timetable-day .sublines .line:nth-child(6) {left: 1248.5px;}
+.timetable-day .sublines .line:nth-child(7) {left: 1476px;}
+.timetable-day .sublines .line:nth-child(8) {left: 1703.25px;}
+.timetable-day .sublines .line:nth-child(9) {left: 1930.25px;}
+.timetable-day .sublines .line:nth-child(10) {left: 2157px;}
+.timetable-day .sublines .line:nth-child(11) {left: 2384px;}
+.timetable-day .sublines .line:nth-child(12) {left: 2611.5px;}
+.timetable-day .sublines .line:nth-child(13) {left: 2838.5px;}
+.timetable-day .sublines .line:nth-child(14) {left: 3066px;}
+.timetable-day .sublines .line:nth-child(15) {left: 3293.5px;}
+.timetable-day .sublines .line:nth-child(16) {left: 3521px;}
+
+
+.timetable-day .lines .line {height: 353px; border-right: 1px solid #fff;}
+.timetable-day .sublines .line {height: 353px; border-right: 1px dashed #fff;}
+
+
+.dragscroll {cursor: grab; cursor: -o-grab; cursor: -moz-grab; cursor: -webkit-grab;}
+
+        /* #endregion */
+    </style>
 </head>
 
 <body>
-  <main class="container">
-    <div>
-        <h1 style="color:#FFFFFF; padding:0.5rem; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Friday</h1>
-    </div>
-    <div class="timeline-header">
-      <div class="timeline-header-slot">14:00</div>
-      <div class="timeline-header-slot">15:00</div>
-      <div class="timeline-header-slot">16:00</div>
-      <div class="timeline-header-slot">17:00</div>
-      <div class="timeline-header-slot">18:00</div>
-      <div class="timeline-header-slot">19:00</div>
-      <div class="timeline-header-slot">20:00</div>
-      <div class="timeline-header-slot">21:00</div>
-      <div class="timeline-header-slot">22:00</div>
-      <div class="timeline-header-slot">23:00</div>
-      <div class="timeline-header-slot">00:00</div>
-      <div class="timeline-header-slot">01:00</div>
-      <div class="timeline-header-slot">02:00</div>
-      <div class="timeline-header-slot">03:00</div>
-      <div class="timeline-header-slot">04:00</div>
-      <div class="timeline-header-slot">05:00</div>
-    </div>
-    <header class="title-wrapper">
-        <h2 class="title">Rooftop</h2>
-    </header>
-    <div class="timeline">
-      <div class="timeline-event" data-event-id="101">Artist 101</div>
-      <div class="timeline-event" data-event-id="102">Artist 102</div>
-      <div class="timeline-event" data-event-id="103">Artist 103</div>
-      <div class="timeline-event" data-event-id="104">Artist 104</div>
-    </div>
-    <header class="title-wrapper">
-      <h2 class="title">Living</h2>
-    </header>
-    <div class="timeline">
-      <div class="timeline-event" data-event-id="201">Artist 201</div>
-      <div class="timeline-event" data-event-id="202">Artist 202</div>
-      <div class="timeline-event" data-event-id="203">Artist 203</div>
-      <div class="timeline-event" data-event-id="204">Artist 204</div>
-    </div>
-    <header class="title-wrapper">
-      <h2 class="title">Gamezone</h2>
-    </header>
-    <div class="timeline">
-      <div class="timeline-event" data-event-id="301">Artist 301</div>
-      <div class="timeline-event" data-event-id="302">Artist 302</div>
-      <div class="timeline-event" data-event-id="303">Artist 303</div>
-      <div class="timeline-event" data-event-id="304">Artist 304</div>
-    </div>
+    <main class="container">
+        <!--FRIDAY-->
+        <div class="timetable-day">
+            <div class="timetable-header">
+                <h1 class="day-header">
+                    Friday</h1>
 
-    <div>
-        <h1 style="color:#FFFFFF; padding:0.5rem; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Saturday</h1>
-    </div>
-    
-    <header class="title-wrapper">
-        <h2 class="title">Rooftop</h2>
-    </header>
-    <div class="timeline">
-      <div class="timeline-event" data-event-id="401">Artist 101</div>
-      <div class="timeline-event" data-event-id="402">Artist 102</div>
-      <div class="timeline-event" data-event-id="403">Artist 103</div>
-      <div class="timeline-event" data-event-id="404">Artist 104</div>
-    </div>
-    <header class="title-wrapper">
-      <h2 class="title">Living</h2>
-    </header>
-    <div class="timeline">
-      <div class="timeline-event" data-event-id="501">Artist 201</div>
-      <div class="timeline-event" data-event-id="502">Artist 202</div>
-      <div class="timeline-event" data-event-id="503">Artist 203</div>
-      <div class="timeline-event" data-event-id="504">Artist 204</div>
-    </div>
-    <header class="title-wrapper">
-      <h2 class="title">Gamezone</h2>
-    </header>
-    <div class="timeline">
-      <div class="timeline-event" data-event-id="601">Artist 301</div>
-      <div class="timeline-event" data-event-id="602">Artist 302</div>
-      <div class="timeline-event" data-event-id="603">Artist 303</div>
-      <div class="timeline-event" data-event-id="604">Artist 304</div>
-    </div>
+                <div class="timeline-header">
+                    <div class="timeline-header-slot">14:00</div>
+                    <div class="timeline-header-slot">15:00</div>
+                    <div class="timeline-header-slot">16:00</div>
+                    <div class="timeline-header-slot">17:00</div>
+                    <div class="timeline-header-slot">18:00</div>
+                    <div class="timeline-header-slot">19:00</div>
+                    <div class="timeline-header-slot">20:00</div>
+                    <div class="timeline-header-slot">21:00</div>
+                    <div class="timeline-header-slot">22:00</div>
+                    <div class="timeline-header-slot">23:00</div>
+                    <div class="timeline-header-slot">00:00</div>
+                    <div class="timeline-header-slot">01:00</div>
+                    <div class="timeline-header-slot">02:00</div>
+                    <div class="timeline-header-slot">03:00</div>
+                    <div class="timeline-header-slot">04:00</div>
+                    <div class="timeline-header-slot">05:00</div>
+                </div>
+            </div>
+            <div class="lines"> <span 
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span>
+            </div>
+            <div class="sublines"> <span 
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span>
+            </div>
+            <div class="timetable-content">
+                <header class="title-wrapper">
+                    <h2 class="title">Rooftop</h2>
+                </header>
 
-    <div>
-        <h1 style="color:#FFFFFF; padding:0.5rem; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Sunday</h1>
-    </div>
 
-    <header class="title-wrapper">
-        <h2 class="title">Rooftop</h2>
-    </header>
-    <div class="timeline">
-      <div class="timeline-event" data-event-id="701">Artist 101</div>
-      <div class="timeline-event" data-event-id="702">Artist 102</div>
-      <div class="timeline-event" data-event-id="703">Artist 103</div>
-      <div class="timeline-event" data-event-id="704">Artist 104</div>
-    </div>
-    <header class="title-wrapper">
-      <h2 class="title">Living</h2>
-    </header>
-    <div class="timeline">
-      <div class="timeline-event" data-event-id="801">Artist 201</div>
-      <div class="timeline-event" data-event-id="802">Artist 202</div>
-      <div class="timeline-event" data-event-id="803">Artist 203</div>
-      <div class="timeline-event" data-event-id="804">Artist 204</div>
-    </div>
-    <header class="title-wrapper">
-      <h2 class="title">Gamezone</h2>
-    </header>
-    <div class="timeline">
-      <div class="timeline-event" data-event-id="901">Artist 301</div>
-      <div class="timeline-event" data-event-id="902">Artist 302</div>
-      <div class="timeline-event" data-event-id="903">Artist 303</div>
-      <div class="timeline-event" data-event-id="904">Artist 304</div>
-    </div>
-  </main>
+                <div class="timeline">
+                    <div class="timeline-event" data-event-id="101">Artist 101</div>
+                    <div class="timeline-event" data-event-id="102">Artist 102</div>
+                    <div class="timeline-event" data-event-id="103">Artist 103</div>
+                    <div class="timeline-event" data-event-id="104">Artist 104</div>
+                </div>
+                <header class="title-wrapper">
+                    <h2 class="title">Living</h2>
+                </header>
+                <div class="timeline">
+                    <div class="timeline-event" data-event-id="201">Artist 201</div>
+                    <div class="timeline-event" data-event-id="202">Artist 202</div>
+                    <div class="timeline-event" data-event-id="203">Artist 203</div>
+                    <div class="timeline-event" data-event-id="204">Artist 204</div>
+                </div>
+                <header class="title-wrapper">
+                    <h2 class="title">Gamezone</h2>
+                </header>
+                <div class="timeline">
+                    <div class="timeline-event" data-event-id="301">Artist 301</div>
+                    <div class="timeline-event" data-event-id="302">Artist 302</div>
+                    <div class="timeline-event" data-event-id="303">Artist 303</div>
+                    <div class="timeline-event" data-event-id="304">Artist 304</div>
+                </div>
+            </div>
+        </div>
+
+        <!--SATURDAY-->
+        <div class="timetable-day">
+            <div class="timetable-header">
+                <div>
+                    <h1 class="day-header">
+                        Saturday</h1>
+                </div>
+                <div class="timeline-header">
+                    <div class="timeline-header-slot">14:00</div>
+                    <div class="timeline-header-slot">15:00</div>
+                    <div class="timeline-header-slot">16:00</div>
+                    <div class="timeline-header-slot">17:00</div>
+                    <div class="timeline-header-slot">18:00</div>
+                    <div class="timeline-header-slot">19:00</div>
+                    <div class="timeline-header-slot">20:00</div>
+                    <div class="timeline-header-slot">21:00</div>
+                    <div class="timeline-header-slot">22:00</div>
+                    <div class="timeline-header-slot">23:00</div>
+                    <div class="timeline-header-slot">00:00</div>
+                    <div class="timeline-header-slot">01:00</div>
+                    <div class="timeline-header-slot">02:00</div>
+                    <div class="timeline-header-slot">03:00</div>
+                    <div class="timeline-header-slot">04:00</div>
+                    <div class="timeline-header-slot">05:00</div>
+                </div>
+            </div>
+            <div class="lines"> <span 
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span>
+            </div>
+            <div class="sublines"> <span 
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span>
+            </div>
+            <div class="timetable-content">
+                <header class="title-wrapper">
+                    <h2 class="title">Rooftop</h2>
+                </header>
+                <div class="timeline">
+                    <div class="timeline-event" data-event-id="401">Artist 101</div>
+                    <div class="timeline-event" data-event-id="402">Artist 102</div>
+                    <div class="timeline-event" data-event-id="403">Artist 103</div>
+                    <div class="timeline-event" data-event-id="404">Artist 104</div>
+                </div>
+                <header class="title-wrapper">
+                    <h2 class="title">Living</h2>
+                </header>
+                <div class="timeline">
+                    <div class="timeline-event" data-event-id="501">Artist 201</div>
+                    <div class="timeline-event" data-event-id="502">Artist 202</div>
+                    <div class="timeline-event" data-event-id="503">Artist 203</div>
+                    <div class="timeline-event" data-event-id="504">Artist 204</div>
+                </div>
+                <header class="title-wrapper">
+                    <h2 class="title">Gamezone</h2>
+                </header>
+                <div class="timeline">
+                    <div class="timeline-event" data-event-id="601">Artist 301</div>
+                    <div class="timeline-event" data-event-id="602">Artist 302</div>
+                    <div class="timeline-event" data-event-id="603">Artist 303</div>
+                    <div class="timeline-event" data-event-id="604">Artist 304</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SUNDAY -->
+        <div class="timetable-day">
+            <div class="timetable-header">
+                <div>
+                    <h1 class="day-header">
+                        Sunday</h1>
+                </div>
+                <div class="timeline-header">
+                    <div class="timeline-header-slot">14:00</div>
+                    <div class="timeline-header-slot">15:00</div>
+                    <div class="timeline-header-slot">16:00</div>
+                    <div class="timeline-header-slot">17:00</div>
+                    <div class="timeline-header-slot">18:00</div>
+                    <div class="timeline-header-slot">19:00</div>
+                    <div class="timeline-header-slot">20:00</div>
+                    <div class="timeline-header-slot">21:00</div>
+                    <div class="timeline-header-slot">22:00</div>
+                    <div class="timeline-header-slot">23:00</div>
+                    <div class="timeline-header-slot">00:00</div>
+                    <div class="timeline-header-slot">01:00</div>
+                    <div class="timeline-header-slot">02:00</div>
+                    <div class="timeline-header-slot">03:00</div>
+                    <div class="timeline-header-slot">04:00</div>
+                    <div class="timeline-header-slot">05:00</div>
+                </div>
+            </div>
+            <div class="lines"> <span 
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span>
+            </div>
+            <div class="sublines"> <span 
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span><span
+                class="line"></span><span class="line"></span>
+            </div>
+            <div class="timetable-content">
+                <header class="title-wrapper">
+                    <h2 class="title">Rooftop</h2>
+                </header>
+                <div class="timeline">
+                    <div class="timeline-event" data-event-id="701">Artist 101</div>
+                    <div class="timeline-event" data-event-id="702">Artist 102</div>
+                    <div class="timeline-event" data-event-id="703">Artist 103</div>
+                    <div class="timeline-event" data-event-id="704">Artist 104</div>
+                </div>
+                <header class="title-wrapper">
+                    <h2 class="title">Living</h2>
+                </header>
+                <div class="timeline">
+                    <div class="timeline-event" data-event-id="801">Artist 201</div>
+                    <div class="timeline-event" data-event-id="802">Artist 202</div>
+                    <div class="timeline-event" data-event-id="803">Artist 203</div>
+                    <div class="timeline-event" data-event-id="804">Artist 204</div>
+                </div>
+                <header class="title-wrapper">
+                    <h2 class="title">Gamezone</h2>
+                </header>
+                <div class="timeline">
+                    <div class="timeline-event" data-event-id="901">Artist 301</div>
+                    <div class="timeline-event" data-event-id="902">Artist 302</div>
+                    <div class="timeline-event" data-event-id="903">Artist 303</div>
+                    <div class="timeline-event" data-event-id="904">Artist 304</div>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>
