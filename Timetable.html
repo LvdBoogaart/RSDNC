@@ -113,7 +113,7 @@
         .title-wrapper {
             display: block;
             padding-top: 2rem;
-            border-top: 1px solid #FFFFFF;
+            border-top: 0.5px solid rgba(255,255,255,0.5);
             opacity: 1;
         }
 
@@ -310,7 +310,7 @@
 
         .timetable-day {
             border-bottom-style: solid;
-            border-bottom-color: #ffffff;
+            border-bottom-color: rgba(255,255,255,0.5);
             border-bottom-width: 1px;
         }
 
@@ -320,6 +320,7 @@
 
         .timetable-content {
             background-color: rgba(0, 0, 0, 0.2);
+            position:relative;
 
         }
 
@@ -329,9 +330,9 @@
             padding:1rem 0 0 1rem;
         }
 
-.timetable-day .lines {position: relative;}
-.timetable-day .sublines {position: relative;}
-.timetable-day .line {position: absolute;}
+.timetable-content .lines {position: absolute;}
+.timetable-content .sublines {position: absolute;}
+.timetable-content .line {position: absolute;}
 
 .timetable-day .lines .line:nth-child(0) {left: 0px;}
 .timetable-day .lines .line:nth-child(1) {left: 225.5px;}
@@ -369,9 +370,12 @@
 .timetable-day .sublines .line:nth-child(15) {left: 3293.5px;}
 .timetable-day .sublines .line:nth-child(16) {left: 3521px;}
 
+/*border-right: 1px solid #fff;*/
+.timetable-content .lines {height:100%;}
+.timetable-content .sublines {height:100%;}
+.timetable-content .lines .line {height: 100%; border-right: 1px solid #fff; opacity:0.5;}
+.timetable-content .sublines .line {height: 100%; border-right: 1px dashed #fff; opacity:0.5;}
 
-.timetable-day .lines .line {height: 353px; border-right: 1px solid #fff;}
-.timetable-day .sublines .line {height: 353px; border-right: 1px dashed #fff;}
 
 
 .dragscroll {cursor: grab; cursor: -o-grab; cursor: -moz-grab; cursor: -webkit-grab;}
@@ -407,27 +411,32 @@
                     <div class="timeline-header-slot">05:00</div>
                 </div>
             </div>
-            <div class="lines"> <span 
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span>
-            </div>
-            <div class="sublines"> <span 
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span>
-            </div>
+            
+
+
             <div class="timetable-content">
+
+                <div class="lines"><div 
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div>
+                </div>
+                <div class="sublines"><div 
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div>
+                </div>
+
                 <header class="title-wrapper">
                     <h2 class="title">Rooftop</h2>
                 </header>
@@ -486,27 +495,29 @@
                     <div class="timeline-header-slot">05:00</div>
                 </div>
             </div>
-            <div class="lines"> <span 
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span>
-            </div>
-            <div class="sublines"> <span 
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span>
-            </div>
+            
             <div class="timetable-content">
+                <div class="lines"> <div 
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div>
+                </div>
+                <div class="sublines"> <div 
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div>
+                </div>
+
                 <header class="title-wrapper">
                     <h2 class="title">Rooftop</h2>
                 </header>
@@ -563,27 +574,29 @@
                     <div class="timeline-header-slot">05:00</div>
                 </div>
             </div>
-            <div class="lines"> <span 
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span>
-            </div>
-            <div class="sublines"> <span 
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span><span
-                class="line"></span><span class="line"></span>
-            </div>
+            
             <div class="timetable-content">
+
+                <div class="lines"> <div 
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div>
+                </div>
+                <div class="sublines"> <div 
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div><div
+                    class="line"></div><div class="line"></div>
+                </div>
                 <header class="title-wrapper">
                     <h2 class="title">Rooftop</h2>
                 </header>
