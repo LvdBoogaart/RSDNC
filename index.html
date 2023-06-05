@@ -11,11 +11,10 @@
 		body{
 			margin:0;
 			padding: 0;
-			background-position:center top;
+			background-position:left top;
 			background-image: url(https://cdn.discordapp.com/attachments/1102330446483833003/1113600281998016604/Lukakoe_minimalist_poster_art_rooftop_party_childhood_drawing_o_eb0568e5-8e59-4989-b3d8-cc281054e003.png);
 			height:100%;
 			background-size:cover;
-
 		}
 		
 		.container{
@@ -50,6 +49,18 @@
 		
 		.btn:hover {
 			transform: scale(1.05);
+		}
+
+		@media screen and (max-width:1980px){
+			html{
+				overflow: hidden;
+				height:100%;
+			}
+			body{
+				-webkit-background-size: auto cover;
+				background-size: auto cover;
+				overflow:auto;
+				width:100%;
 		}
 	</style>
 </head>
