@@ -1,355 +1,440 @@
-<!doctype html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!--Quite a few clients strip your Doctype out, and some even apply their own. Many clients do honor your doctype and it can make things much easier if you can validate constantly against a Doctype.-->
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RSDNC HOUSE</title>
-<!-- Please use an inliner tool to convert all CSS to inline as inpage or external CSS is removed by email clients -->
-<!-- important in CSS is used to prevent the styles of currently inline CSS from overriding the ones mentioned in media queries when corresponding screen sizes are encountered -->
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RSDNC HOUSE</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="scripts/scripts.js"></script>
+    <script src="data/artistOverlays.js"></script>
+  </head>
 
-<style type="text/css">
-html{
-	overflow: hidden;
-	height: 100%;
-}
-	body {
-		margin: 0;
-		padding: 0;
-		background-image: url(https://cdn.midjourney.com/070cf813-2b1c-4cd5-a1c3-abd147d78a67/0_1.png);
-		background-position: center 30%;
-		background-size:95%;
-		z-index:-1;
-		overflow: auto;
-		height:100%;
-		
-}
-	body, table, td, p, a, li, blockquote {
-	-webkit-text-size-adjust: none!important;
-	font-family: sans-serif;
-	font-style: normal;
-	font-weight: 400;
-}
+  <body>
+    <center class="wrapper">
+      <table class="main" width="100%">
+        <!-- TOP SPACE -->
+        <tr>
+          <td height="50"></td>
+        </tr>
 
-
-	.wrapper{
-		width:100%;
-		table-layout: fixed;
-		background-color: rgba(0,0,0,0);
-		padding-bottom: 10px;
-	}	
-	
-	.main{
-		background-color: rgba(0,0,0,0.01);
-		margin: 0 auto;
-		width: 100%;
-		max-width: 600px;
-		border-spacing: 0;
-		font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";	
-		color: white;
-	}
-	
-	.column{
-		align: center;
-		font-size: 0;
-		padding: 10px 20px;
-		
-	}
-	
-	.two-column{
-		text-align: center;
-		font-size: 0;
-		padding: 15px 0 25px;
-		
-	}
-	
-	.two-column .column{
-		width: 100%;
-		max-width: 290px;
-		display: inline-block;
-		vertical-align: top;
-		text-align: center;
-		padding: 10px;
-		
-	}
-	
-	.two-column .padding{
-		padding: 2px;
-	}
-	
-	.two-column .content{
-		font-size: 16px;
-		line-height: 22px;
-		padding: 2px 4px;
-		background-color: rgba(0,0,0,0.3)
-	}
-		
-	.textbox{
-		text-align: justify;
-		padding: 10px 30px;
-	}
-		
-	.content .panel {
-		max-width:240px; 
-		background-color:rgba(0,0,0,0.2); 
-		border-radius:0%; 
-		border-width:5px; 
-		border-style:solid; 
-		border-color:rgba(255,255,255,1.00);
-		
-	}
-		
-	.button-td, .button-a {
-		transition: all 100ms ease-in;
-	}
-	.button-td:hover, .button-a:hover {
-		color: rgba(37,150,190,1) !important;
-		background: rgba(255,255,255,1) !important;
-		border-color: rgba(255,255,255,1) !important;
-		
-	}		
-	
-
-</style>
-
-
-</head>
-
-<body>
-	<center class="wrapper">
-		<table class="main" width="100%">
-		
-			<!-- TOP SPACE -->
-			<tr>
-				<td height="50"></td>						
-			</tr>
-			
-			<!-- LOGO -->
-			<tr>
-				<td>
-					<table width="100%">
-						<tr>
-							<td class="column" align="center">
-								<a href="#"><img src="https://cdn.discordapp.com/attachments/1102330446483833003/1111751958026530818/Asset_24x.png" alt="La Residance House" width="300" style="max-width:100%; background-color:rgba(0,0,0,0.2); border-radius:7%;"></a>
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-			
-			<!-- TITLE -->
-			<tr>
-				<td>
-					<table width="100%">
-						<tr>
-							<td style="text-align: center; padding: 15px;">
-								<p style="color:#FFFFFF; font-size: 40px; font-weight: bold; font-family: Baskerville, 'Palatino Linotype', Palatino, 'Century Schoolbook L', 'Times New Roman', 'serif'">Residance Festival</p>
-								<p style="color:#FFFFFF; font-size: 30px; font-weight: bold; font-family: Baskerville, 'Palatino Linotype', Palatino, 'Century Schoolbook L', 'Times New Roman', 'serif'">4-5-6 AUG 2023</p>
-							</td>
-						</tr>
-					
-					</table>
-				</td>
-			</tr>
-			
-			
-			<!-- SINGLE COLUMN DESCRIPTION -->
-			<tr>
-				<td>
-					<table width="100%">
-						<tr style="background-color: rgba(241,60,86,1.00); border-radius:7%">
-							<td class="textbox">
-								<p style="color:#FFFFFF; font-size: 17px; font-weight: normal; font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, 'sans-serif'; line-height: 20px; text-justify:auto">Get ready to be swept off your feet at our ultra-swanky rooftop extravaganza! Join us for a night of unbridled excitement, where the beats are so stanky, they'll have you grooving nonstop. Immerse yourself in the pulsating rhythms of salsa dancing, as you unleash your inner dance floor diva and revel in the company of your closest pals. And for those seeking a touch of friendly competition, prepare to conquer our top-notch pool table and showcase your skills in style.</p>
-
-							</td>
-						</tr>
-					
-					</table>
-				</td>
-			</tr>
-			
-			<!-- TICKET LINK -->
-		  <tr>
-				<td>
-					<table cellspacing="0" cellpadding="0" border="0" align="center" style="margin-top: 50px">
-                        <tr>
-                          <td style="border-radius: 3px; background: rgba(37,150,190,1); text-align: center;" class="button-td"><a href="./RSDNC_partyform.html" style="background: rgba(37,150,190,1); border: 15px solid rgba(37,150,190,1); padding: 0 10px; color: rgba(255,255,255,1.00); font-family: sans-serif; font-size: 16px; line-height: 1.1; text-align: center; text-decoration: none; display: block; border-radius: 3px; font-weight: bold;" class="button-a"> 
-                            <!--[if mso]>&nbsp;&nbsp;&nbsp;&nbsp;<![endif]-->Get your tickets now!<!--[if mso]>&nbsp;&nbsp;&nbsp;&nbsp;<![endif]--> 
-                            </a></td>
-                        </tr>
-                      </table>
-			  </td>
-			</tr>
-			
-			<!-- Line-up -->
-			<tr>
-				<td>
-					<table width="100%">
-						<tr>
-						  <td style="text-align: center; padding: 15px 0 0 0 ;">
-							<a href="Timetable.html" style="text-decoration: none;">
-							<p style="color:#FFFFFF; font-size: 40px; font-weight: bold; font-family: Baskerville, 'Palatino Linotype', Palatino, 'Century Schoolbook L', 'Times New Roman', 'serif'">Line-up</p>
-							</a>
-							</td>
-						</tr>
-					
-					</table>
-				</td>
-			</tr>
-			
-			<!-- DOUBLE COLUMN LINEUP -->
-			
-			<tr>
-				<td>
-					<table width="100%">
-						<tr>
-							<td class="two-column">
-								<table class="column">
-									<tr>
-										<td class="padding">
-											<table class="content">
-												<tr>
-													<td>
-														<a href="https://www.youtube.com/watch?v=zhFllqXWJEQ&list=PLmZ0ldGcHK5xlmjO-JkCHlWDvVlk9cYst&index=14" target="_blank"><img class="panel" src="https://cdn.discordapp.com/attachments/1102330446483833003/1112025033309696000/Lukakoe_vinyl_cover_salsa_dancer_minimalist_volumetric_colourin_4e44abf5-0cd4-47a5-a37f-f70985452266.png" alt="La Residance House" width="240" style=""></a>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<p style="font-weight:bold; font-size:20px">Salsa on the Roof</p>
-														<p style>Prepare to set the roof ablaze with the scorching moves of our salsa sensation, the Maestro of Mambo, Thomas Booij! Brace yourself for a rhythmic odyssey as they take you on an unforgettable journey through the vibrant beats of Latin America and beyond.</p>
-													</td>
-												</tr>
-											</table>
-										</td>
-									</tr>
-								</table>
-								<table class="column">
-									<tr>
-										<td class="padding">
-											<table class="content">
-												<tr>
-													<td>
-														<a href="#"><img class="panel" src="https://cdn.discordapp.com/attachments/1102330446483833003/1112039841652293703/Lukakoe_vinyl_cover_7th_ring_of_saturn_sound_waves_synthwave_057d4b34-a9fe-4a31-b79f-286e2aec54aa.png" alt="La Residance House" width="240" style=""></a>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<p style="font-weight:bold; font-size:20px">7th Ring of Saturn</p>
-														<p>Get ready to groove your socks off with the transient tunes from 7th Ring of Saturn. Join us on our journey to the far reaches of our solar system, and beyond!</p>
-													</td>
-												</tr>
-											</table>
-										</td>
-									</tr>
-								</table>
-							</td>
-						</tr>
-						<tr>
-							<td class="two-column">
-								<table class="column">
-									<tr>
-										<td class="padding">
-											<table class="content">
-												<tr>
-													<td>
-														<a href="https://www.mixcloud.com/residentadvisor/ra500-nicolasjaar/" target="_blank"><img class="panel" src="https://cdn.discordapp.com/attachments/1102330446483833003/1112052405748646018/Lukakoe_face_in_the_stye_of_shepard_fairey_cover_art_096f6e56-aaa2-4260-9f46-5b3b1406a002.png" width="240" style=""></a>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<p style="font-weight:bold; font-size:20px">Oasis</p>
-														<p style></p>
-													</td>
-												</tr>
-											</table>
-										</td>
-									</tr>
-								</table>
-								<table class="column">
-									<tr>
-										<td class="padding">
-											<table class="content">
-												<tr>
-													<td>
-														<a href="#"><img class="panel" src="https://cdn.discordapp.com/attachments/1102330446483833003/1112335346659762296/Lukakoe_vinyl_cover_ca21b5ce-3ba4-40a5-9595-24d93ab830e2.png" alt="La Residance House" width="240" style=""></a>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<p style="font-weight:bold; font-size:20px">Residance House</p>
-														<p>Get ready to get stanky on a curated selection of carefully selected vinyls procured by La Residance House. Time to get your groove on!</p>
-													</td>
-												</tr>
-											</table>
-										</td>
-									</tr>
-								</table>
-							</td>
-						</tr>
-						<tr>
-							<td class="two-column">
-								<table class="column">
-									<tr>
-										<td class="padding">
-											<table class="content">
-												<tr>
-													<td>
-														<a href="https://www.youtube.com/watch?v=zhFllqXWJEQ&list=PLmZ0ldGcHK5xlmjO-JkCHlWDvVlk9cYst&index=14" target="_blank"><img class="panel" src="https://cdn.discordapp.com/attachments/1102330446483833003/1112337470290399343/Lukakoe_black_and_white_photo_bbq_grill_master_2829fba9-3493-4b50-8c7f-60a1a18b06d9.png" alt="La Residance House" width="240" style=""></a>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<p style="font-weight:bold; font-size:20px">Roastmasters</p>
-														<p style>Etymologists believe this to be derived from barabicu found in the language of the Arawak people of the Caribbean and the Timucua people of Florida; it has entered some European languages in the form of barbacoa</p>
-													</td>
-												</tr>
-											</table>
-										</td>
-									</tr>
-								</table>
-								<table class="column">
-									<tr>
-										<td class="padding">
-											<table class="content">
-												<tr>
-													<td>
-														<a href="https://www.instagram.com/moanzy_music/"><img class="panel" src="https://cdn.discordapp.com/attachments/1102330446483833003/1115041862848348172/image.png" alt="Moanzy"" width="240" style=""></a>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<p style="font-weight:bold; font-size:20px">Moanzy</p>
-														<p>Prepare to be swept away by the grooviest flows of Moanzy. From the vibrant streets of Tokyo to bustling Brazil, Moanzy has captivated hearts and people with his music. Moanzy's authentic performances forge an intimate connection with audiences, inviting them into a realm where vulnerability and strength intertwine.</p>
-													</td>
-												</tr>
-											</table>
-										</td>
-									</tr>
-								</table>
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-			
-			
-			
-			
-			<!-- FOOTER -->
-			<table cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="max-width: 680px;">
-            <tr>
-              <td style="padding: 40px 10px;width: 100%;font-size: 14px; font-family: sans-serif; mso-height-rule: exactly; line-height:18px; text-align: center; color: #FFFFFF;">
-                La Residance Lounge. 2023<br>
-                <span class="mobile-link--footer">Grote marktstraat 9, Den Haag</span> 
+        <!-- LOGO -->
+        <tr>
+          <td>
+            <table width="100%">
+              <tr>
+                <td class="column" align="center">
+                  <a href="#"
+                    ><img
+                      src="https://cdn.discordapp.com/attachments/1102330446483833003/1111751958026530818/Asset_24x.png"
+                      alt="La Residance House"
+                      width="300"
+                      style="
+                        max-width: 100%;
+                        background-color: rgba(0, 0, 0, 0.2);
+                        border-radius: 7%;
+                      "
+                  /></a>
                 </td>
-            </tr>
-          </table>
-			
-			
-		</table>
-	
-	
-	</center>
-</body>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- TITLE -->
+        <tr>
+          <td>
+            <table width="100%">
+              <tr>
+                <td style="text-align: center; padding: 15px">
+                  <p
+                    style="
+                      color: #ffffff;
+                      font-size: 40px;
+                      font-weight: bold;
+                      font-family: Baskerville, 'Palatino Linotype', Palatino,
+                        'Century Schoolbook L', 'Times New Roman', 'serif';
+                    "
+                  >
+                    Residance Festival
+                  </p>
+                  <p
+                    style="
+                      color: #ffffff;
+                      font-size: 30px;
+                      font-weight: bold;
+                      font-family: Baskerville, 'Palatino Linotype', Palatino,
+                        'Century Schoolbook L', 'Times New Roman', 'serif';
+                    "
+                  >
+                    4-5-6 AUG 2023
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- SINGLE COLUMN DESCRIPTION -->
+        <tr>
+          <td>
+            <table width="100%">
+              <tr
+                style="
+                  background-color: rgba(241, 60, 86, 1);
+                  border-radius: 7%;
+                "
+              >
+                <td class="textbox">
+                  <p
+                    style="
+                      color: #ffffff;
+                      font-size: 17px;
+                      font-weight: normal;
+                      font-family: Segoe, 'Segoe UI', 'DejaVu Sans',
+                        'Trebuchet MS', Verdana, 'sans-serif';
+                      line-height: 20px;
+                      text-justify: auto;
+                    "
+                  >
+                    Get ready to be swept off your feet at our ultra-swanky
+                    rooftop extravaganza! Join us for a night of unbridled
+                    excitement, where the beats are so stanky, they'll have you
+                    grooving nonstop. Immerse yourself in the pulsating rhythms
+                    of salsa dancing, as you unleash your inner dance floor diva
+                    and revel in the company of your closest pals. And for those
+                    seeking a touch of friendly competition, prepare to conquer
+                    our top-notch pool table and showcase your skills in style.
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- TICKET LINK -->
+        <tr>
+          <td>
+            <table
+              cellspacing="0"
+              cellpadding="0"
+              border="0"
+              align="center"
+              style="margin-top: 50px"
+            >
+              <tr>
+                <td
+                  style="
+                    border-radius: 3px;
+                    background: rgba(37, 150, 190, 1);
+                    text-align: center;
+                  "
+                  class="button-td"
+                >
+                  <a
+                    href="./RSDNC_partyform.html"
+                    style="
+                      background: rgba(37, 150, 190, 1);
+                      border: 15px solid rgba(37, 150, 190, 1);
+                      padding: 0 10px;
+                      color: rgba(255, 255, 255, 1);
+                      font-family: sans-serif;
+                      font-size: 16px;
+                      line-height: 1.1;
+                      text-align: center;
+                      text-decoration: none;
+                      display: block;
+                      border-radius: 3px;
+                      font-weight: bold;
+                    "
+                    class="button-a"
+                  >
+                    <!--[if mso]>&nbsp;&nbsp;&nbsp;&nbsp;<!
+                    [endif]-->Get your tickets now!<!--[if mso
+                      ]>&nbsp;&nbsp;&nbsp;&nbsp;<!
+                    [endif]-->
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Line-up -->
+        <tr>
+          <td>
+            <table width="100%">
+              <tr>
+                <td style="text-align: center; padding: 15px 0 0 0">
+                  <a href="Timetable.html" style="text-decoration: none">
+                    <p
+                      style="
+                        color: #ffffff;
+                        font-size: 40px;
+                        font-weight: bold;
+                        font-family: Baskerville, 'Palatino Linotype', Palatino,
+                          'Century Schoolbook L', 'Times New Roman', 'serif';
+                      "
+                    >
+                      Line-up
+                    </p>
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- DOUBLE COLUMN LINEUP -->
+
+        <tr>
+          <td>
+            <table width="100%">
+              <tr>
+                <td class="two-column">
+                  <table class="column">
+                    <tr>
+                      <td class="padding">
+                        <table class="content data-artist" id="item">
+                          <tr>
+                            <td>
+                              <a href="#">
+                                <img
+                                  class="panel"
+                                  src="https://cdn.discordapp.com/attachments/1102330446483833003/1112025033309696000/Lukakoe_vinyl_cover_salsa_dancer_minimalist_volumetric_colourin_4e44abf5-0cd4-47a5-a37f-f70985452266.png"
+                                  alt="La Residance House"
+                                  width="240"
+                                  style=""
+                                  onclick="openOverlay(0)"
+                                />
+                              </a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p style="font-weight: bold; font-size: 20px">
+                                Salsa on the Roof
+                              </p>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                  <table class="column">
+                    <tr>
+                      <td class="padding">
+                        <table class="content">
+                          <tr>
+                            <td>
+                              <a href="#"
+                                ><img
+                                  class="panel"
+                                  src="https://cdn.discordapp.com/attachments/1102330446483833003/1112039841652293703/Lukakoe_vinyl_cover_7th_ring_of_saturn_sound_waves_synthwave_057d4b34-a9fe-4a31-b79f-286e2aec54aa.png"
+                                  alt="La Residance House"
+                                  width="240"
+                                  style=""
+                                  onclick="openOverlay(1)"
+                              /></a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p style="font-weight: bold; font-size: 20px">
+                                7th Ring of Saturn
+                              </p>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td class="two-column">
+                  <table class="column">
+                    <tr>
+                      <td class="padding">
+                        <table class="content">
+                          <tr>
+                            <td>
+                              <a
+                                href="https://www.mixcloud.com/residentadvisor/ra500-nicolasjaar/"
+                                target="_blank"
+                                ><img
+                                  class="panel"
+                                  src="https://cdn.discordapp.com/attachments/1102330446483833003/1112052405748646018/Lukakoe_face_in_the_stye_of_shepard_fairey_cover_art_096f6e56-aaa2-4260-9f46-5b3b1406a002.png"
+                                  width="240"
+                                  style=""
+                              /></a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p style="font-weight: bold; font-size: 20px">
+                                Walls of Water Sound System
+                              </p>
+                              <p style></p>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                  <table class="column">
+                    <tr>
+                      <td class="padding">
+                        <table class="content">
+                          <tr>
+                            <td>
+                              <a href="#"
+                                ><img
+                                  class="panel"
+                                  src="https://cdn.discordapp.com/attachments/1102330446483833003/1112335346659762296/Lukakoe_vinyl_cover_ca21b5ce-3ba4-40a5-9595-24d93ab830e2.png"
+                                  alt="La Residance House"
+                                  width="240"
+                                  style=""
+                              /></a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p style="font-weight: bold; font-size: 20px">
+                                Residance House
+                              </p>
+                              <p>
+                                Get ready to get stanky on a curated selection
+                                of carefully selected vinyls procured by La
+                                Residance House. Time to get your groove on!
+                              </p>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td class="two-column">
+                  <table class="column">
+                    <tr>
+                      <td class="padding">
+                        <table class="content">
+                          <tr>
+                            <td>
+                              <a
+                                href="https://www.youtube.com/watch?v=zhFllqXWJEQ&list=PLmZ0ldGcHK5xlmjO-JkCHlWDvVlk9cYst&index=14"
+                                target="_blank"
+                                ><img
+                                  class="panel"
+                                  src="https://cdn.discordapp.com/attachments/1102330446483833003/1112337470290399343/Lukakoe_black_and_white_photo_bbq_grill_master_2829fba9-3493-4b50-8c7f-60a1a18b06d9.png"
+                                  alt="La Residance House"
+                                  width="240"
+                                  style=""
+                              /></a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p style="font-weight: bold; font-size: 20px">
+                                Roastmasters
+                              </p>
+                              <p style>
+                                Etymologists believe this to be derived from
+                                barabicu found in the language of the Arawak
+                                people of the Caribbean and the Timucua people
+                                of Florida; it has entered some European
+                                languages in the form of barbacoa
+                              </p>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                  <table class="column">
+                    <tr>
+                      <td class="padding">
+                        <table class="content">
+                          <tr>
+                            <td>
+                              <a href="https://www.instagram.com/moanzy_music/"
+                                ><img class="panel"
+                                src="https://cdn.discordapp.com/attachments/1102330446483833003/1115041862848348172/image.png"
+                                alt="Moanzy"" width="240" style=""></a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p style="font-weight: bold; font-size: 20px">
+                                Moanzy
+                              </p>
+                              <p>
+                                Prepare to be swept away by the grooviest flows
+                                of Moanzy. From the vibrant streets of Tokyo to
+                                bustling Brazil, Moanzy has captivated hearts
+                                and people with his music. Moanzy's authentic
+                                performances forge an intimate connection with
+                                audiences, inviting them into a realm where
+                                vulnerability and strength intertwine.
+                              </p>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- FOOTER -->
+        <table
+          cellspacing="0"
+          cellpadding="0"
+          border="0"
+          align="center"
+          width="100%"
+          style="max-width: 680px"
+        >
+          <tr>
+            <td
+              style="
+                padding: 40px 10px;
+                width: 100%;
+                font-size: 14px;
+                font-family: sans-serif;
+                mso-height-rule: exactly;
+                line-height: 18px;
+                text-align: center;
+                color: #ffffff;
+              "
+            >
+              La Residance Lounge. 2023<br />
+              <span class="mobile-link--footer"
+                >Grote marktstraat 9, Den Haag</span
+              >
+            </td>
+          </tr>
+        </table>
+      </table>
+    </center>
+    <div id="overlay" class="overlay">
+      <span class="close-button" onclick="closeOverlay()">X</span>
+      <div class="overlay-content">
+        <img id="artist-image" src="" alt="Artist Image" />
+        <div class="innerContainer">
+          <div class="banner"><h2 id="artist-name"></h2></div>
+          <p id="artist-bio"></p>
+          <div class="spotifyPlayer" id="spotify-player"></div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

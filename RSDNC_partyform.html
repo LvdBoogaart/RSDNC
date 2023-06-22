@@ -1,111 +1,114 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<!-- utf-8 works for most cases -->
-<meta name="viewport" content="width=device-width">
-<!-- Forcing initial-scale shouldn't be necessary -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Ticket form</title>
-	<style>
-		body{
-			margin:0;
-			padding: 0;
-			background-position:center top;
-			background-image: url(https://cdn.discordapp.com/attachments/1102330446483833003/1113133096607420416/Lukakoe_minimalist_poster_art_rooftop_party_childhood_drawing_o_85d1c890-ba93-4ecd-a44e-f7210eb1b0a7.png);
-			background-repeat:no-repeat;
-			-webkit-background-size: cover;
-			background-size: cover;
-			width:100%;
-		}
-		
-		.container{
-			width: 100%;
-			align-content: center;
-			position: absolute;
-			top: 40%;
-		}
-		
-		.column {
-			width:100%;
-			max-width:600;
-			text-align:center;
-		}
-		
-		.form-group{
-			padding:10px;
-			align-content:center;
-			
-		}
-		
-		.form-control{
-			font-size:22px;
-		}
-	
-		.btn{
-			font-size: 22px;
-			padding: 5px 20px;
-			background-color: rgba(74,142,143,1.00);
-			border-color: rgba(74,142,143,1.00);
-			border-style: solid;
-			border-width: medium;
-			color: rgba(246,178,45,1.00);
-			text-shadow: 0px 0px 2px rgba(245,218,148,0.2);
-			transition: all 100ms ease-in;
-		}
-		
-		
-		.btn:hover {
-			color: rgba(245,218,148,1.00) !important;
-			text-shadow: 0px 0px 3px rgba(246,178,45,1.00);
-			background: rgba(74,142,143,1.00) !important;
-			border-color: rgba(74,142,143,1.00) !important;
-			box-shadow: 0px 0px 20px 10px rgba(246,178,45,1.00);
-			padding: 7px 24px;
-		}
-		
-		@media screen and (max-width:1980px){
-			html{
-				overflow: hidden;
-				height:100%;
-			}
-			body{
-				-webkit-background-size: auto cover;
-				background-size: auto cover;
-				overflow:auto;
-				width:100%;
-		}
+  <head>
+    <meta charset="utf-8" />
+    <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width" />
+    <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Ticket form</title>
+    <style>
+      body{
+      	margin:0;
+      	padding: 0;
+      	background-position:center top;
+      	background-image: url(https://cdn.discordapp.com/attachments/1102330446483833003/1113133096607420416/Lukakoe_minimalist_poster_art_rooftop_party_childhood_drawing_o_85d1c890-ba93-4ecd-a44e-f7210eb1b0a7.png);
+      	background-repeat:no-repeat;
+      	-webkit-background-size: cover;
+      	background-size: cover;
+      	width:100%;
+      }
 
-	</style>
-</head>
+      .container{
+      	width: 100%;
+      	align-content: center;
+      	position: absolute;
+      	top: 40%;
+      }
 
-<body>
-<div class="container">
-	<div class="column">
-			<form action="RSDNC_partyform_results.html" method="get">
-				<div class="form-group">
-			   		<label for="name"></label>
-			    	<input name="name" type="text" class="form-control" id="name" placeholder="Enter name">
-			  	</div>
-			  	<!--div class="form-group">
+      .column {
+      	width:100%;
+      	max-width:600;
+      	text-align:center;
+      }
+
+      .form-group{
+      	padding:10px;
+      	align-content:center;
+
+      }
+
+      .form-control{
+      	font-size:22px;
+      }
+
+      .btn{
+      	font-size: 22px;
+      	padding: 5px 20px;
+      	background-color: rgba(74,142,143,1.00);
+      	border-color: rgba(74,142,143,1.00);
+      	border-style: solid;
+      	border-width: medium;
+      	color: rgba(246,178,45,1.00);
+      	text-shadow: 0px 0px 2px rgba(245,218,148,0.2);
+      	transition: all 100ms ease-in;
+      }
+
+
+      .btn:hover {
+      	color: rgba(245,218,148,1.00) !important;
+      	text-shadow: 0px 0px 3px rgba(246,178,45,1.00);
+      	background: rgba(74,142,143,1.00) !important;
+      	border-color: rgba(74,142,143,1.00) !important;
+      	box-shadow: 0px 0px 20px 10px rgba(246,178,45,1.00);
+      	padding: 7px 24px;
+      }
+
+      @media screen and (max-width:1980px){
+      	html{
+      		overflow: hidden;
+      		height:100%;
+      	}
+      	body{
+      		-webkit-background-size: auto cover;
+      		background-size: auto cover;
+      		overflow:auto;
+      		width:100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="column">
+        <form action="RSDNC_partyform_results.html" method="get">
+          <div class="form-group">
+            <label for="name"></label>
+            <input
+              name="name"
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Enter name"
+            />
+          </div>
+          <!--div class="form-group">
 			    	<label for="exampleInputPassword1"></label>
 			    	<input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
 		      	</div-->
-			  	<div style="margin-top:20px">
-					<!--a href="./RSDNC_partyform_results.html"-->
-			  		<button type="submit" class="btn">Submit</button>
-					<!--/a-->
-				</div>
-		  </form>
+          <div style="margin-top: 20px">
+            <!--a href="./RSDNC_partyform_results.html"-->
+            <button type="submit" class="btn">Submit</button>
+            <!--/a-->
+          </div>
+        </form>
+      </div>
     </div>
-</div>
-	<!--script>
+    <!--script>
 		function submitForm() {
 			var name = document.getElementById("name").value;
 			location.href = "RSDNC/RSDNC_partyform_results.html?Name=" + encodeURIComponent(Name);
 		}
 	</script-->
-	
-	
-</body>
+  </body>
 </html>

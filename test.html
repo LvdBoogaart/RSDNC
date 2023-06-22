@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* CSS styles for overlay and content */
+      /* ... */
+
+      /* Add a close button */
+      .close-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+      }
+    </style>
+
+    <script src="data/artistOverlays.js"></script>
+    <script>
+      function openOverlay(index) {
+        const overlayData = artistOverlays[index];
+
+        // Show the overlay
+        var overlay = document.getElementById("overlay");
+        overlay.style.display = "flex";
+
+        // Populate the overlay with artist data
+        document.getElementById("artist-name").textContent = overlayData.name;
+        document.getElementById("artist-bio").textContent = overlayData.bio;
+        document.getElementById("artist-image").src = overlayData.image;
+      }
+
+      function closeOverlay() {
+        var overlay = document.getElementById("overlay");
+        overlay.style.display = "none";
+      }
+    </script>
+  </head>
+  <body>
+    <table class="content data-artist">
+      <tr>
+        <td class="two-column">
+          <table class="column">
+            <tr>
+              <td class="padding">
+                <table class="content">
+                  <tr>
+                    <td>
+                      <img
+                        class="panel"
+                        src="https://cdn.discordapp.com/attachments/1102330446483833003/1112025033309696000/Lukakoe_vinyl_cover_salsa_dancer_minimalist_volumetric_colourin_4e44abf5-0cd4-47a5-a37f-f70985452266.png"
+                        alt="La Residance House"
+                        width="240"
+                        style=""
+                        onclick="openOverlay(0)"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p style="font-weight: bold; font-size: 20px">
+                        Salsa on the Roof
+                      </p>
+                      <p>
+                        Prepare to set the roof ablaze with the scorching moves
+                        of our salsa sensation, the Maestro of Mambo, Thomas
+                        Booij! Brace yourself for a rhythmic odyssey as they
+                        take you on an unforgettable journey through the vibrant
+                        beats of Latin America and beyond.
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <table class="column">
+            <tr>
+              <td class="padding">
+                <table class="content">
+                  <tr>
+                    <td>
+                      <img
+                        class="panel"
+                        src="https://cdn.discordapp.com/attachments/1102330446483833003/1112039841652293703/Lukakoe_vinyl_cover_7th_ring_of_saturn_sound_waves_synthwave_057d4b34-a9fe-4a31-b79f-286e2aec54aa.png"
+                        alt="La Residance House"
+                        width="240"
+                        style=""
+                        onclick="openOverlay(1)"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p style="font-weight: bold; font-size: 20px">
+                        7th Ring of Saturn
+                      </p>
+                      <p>
+                        Get ready to groove your socks off with the transient
+                        tunes from 7th Ring of Saturn. Join us on our journey to
+                        the far reaches of our solar system, and beyond!
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+    <div id="overlay" class="overlay">
+      <div class="overlay-content">
+        <span class="close-button" onclick="closeOverlay()">X</span>
+        <h2 id="artist-name"></h2>
+        <p id="artist-bio"></p>
+        <img id="artist-image" src="" alt="Artist Image" />
+      </div>
+    </div>
+  </body>
+</html>
