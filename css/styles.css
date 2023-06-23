@@ -41,12 +41,12 @@ blockquote {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -45%);
   background-color: rgba(0, 0, 0, 0);
   max-width: 100%;
   width: 60%;
   min-width: 600px;
-  max-height: 90%;
+  max-height: 100%;
   overflow-y: auto;
 }
 
@@ -57,7 +57,7 @@ blockquote {
 }
 
 .overlay p {
-  font-size: 1.5em;
+  font-size: 1.2em;
   color: #fff;
   padding-left: 3em;
   padding-right: 3em;
@@ -65,9 +65,10 @@ blockquote {
 }
 
 .overlay h2 {
-  font-size: 2em;
+  font-size: 3em;
   color: #fff;
-  line-height: 2.5em;
+  line-height: 1.8em;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
 .overlay .banner {
@@ -178,6 +179,8 @@ blockquote {
 
 .content .panel {
   max-width: 240px;
+  max-height: 240px;
+  object-fit: cover;
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 0%;
   border-width: 5px;

@@ -1,9 +1,11 @@
 const artistOverlays = [
   {
     name: "Tom Wavy",
-    bio: `Tom Wavy (Tomas Uijttenboogaard) is een Haagse indie pop artiest die zowel live als in de studio wordt begeleid door gitarist Thomas Booij. Met een eigen, akoestisch repertoire brengt Tom Wavy sinds maart 2019 zelfgeschreven muziek uit. Inmiddels zijn er zo’n 20 nummers uitgebracht met allemaal een kenmerkende warme sound die veelal zomers en opliftend aanvoelt.<br><br> 
-    De single 'Wanna Go', die in 2020 samen met de Zwitserse artiest BLVMENKIND werd uitbracht, heeft laten zien dat Tom Wavy ook een internationaal publiek aanspreekt. Het nummer is meer dan 600.000 keer beluisterd in ruim 50 landen. <br><br>
-    Op 1 oktober 2021 heeft Tom Wavy zijn debuutalbum 'Another Way' uitgebracht waar hij het afgelopen jaar samen met Thomas hard aan heeft gewerkt. 10 nieuwe nummers met allemaal die zonnige sound die voor Tom inmiddels typerend is geworden en in toekomstige nummers zeker zal blijven!`,
+    bio: [
+      `Tom Wavy (Tomas Uijttenboogaard) is een Haagse indie pop artiest die zowel live als in de studio wordt begeleid door gitarist Thomas Booij. Met een eigen, akoestisch repertoire brengt Tom Wavy sinds maart 2019 zelfgeschreven muziek uit. Inmiddels zijn er zo’n 20 nummers uitgebracht met allemaal een kenmerkende warme sound die veelal zomers en opliftend aanvoelt.`,
+      `De single 'Wanna Go', die in 2020 samen met de Zwitserse artiest BLVMENKIND werd uitbracht, heeft laten zien dat Tom Wavy ook een internationaal publiek aanspreekt. Het nummer is meer dan 600.000 keer beluisterd in ruim 50 landen.`,
+      `Op 1 oktober 2021 heeft Tom Wavy zijn debuutalbum 'Another Way' uitgebracht waar hij het afgelopen jaar samen met Thomas hard aan heeft gewerkt. 10 nieuwe nummers met allemaal die zonnige sound die voor Tom inmiddels typerend is geworden en in toekomstige nummers zeker zal blijven!`,
+    ],
     image:
       "https://cdn.discordapp.com/attachments/1102330446483833003/1121182582525149214/Tomwavy_Pressphoto1.jpg",
     spotifyId: "2dRxyWJpa4WWEr3q8RFNty",

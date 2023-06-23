@@ -1,3 +1,11 @@
+function insertBio(artistBio) {
+  let html = ``;
+  artistBio.forEach((bio) => {
+    return (html += `<p>${bio}</p>`);
+  });
+  return html;
+}
+
 function openOverlay(index) {
   const overlayData = artistOverlays[index];
 
@@ -7,7 +15,9 @@ function openOverlay(index) {
 
   // Populate the overlay with artist data
   document.getElementById("artist-name").textContent = overlayData.name;
-  document.getElementById("artist-bio").textContent = overlayData.bio;
+  document.getElementById("artist-bio").innerHTML = insertBio(
+    overlayData.bio
+  ); /*overlayData.bio;*/
   document.getElementById("artist-image").src = overlayData.image;
 
   // Embed the Spotify web player
