@@ -35,3 +35,22 @@ function closeOverlay() {
   // Enable scrolling on the body
   document.body.style.overflow = "auto";
 }
+
+import { fetchData } from "./sheets";
+
+// Replace 'YOUR_SHEET_ID' and 'YOUR_RANGE' with your actual values
+const sheetId = "1c8l5nXF-vjHXFI8H7DB8yaxsUnHWdBTqeeP2-lrWZWg";
+const range = "A2:J";
+
+// Call the fetchData function to retrieve the data from the Google Sheet
+fetchData(sheetId, range)
+  .then((data) => {
+    // Process the retrieved data and generate HTML elements
+    // ...
+    // Attach the HTML elements to the DOM
+    // ...
+  })
+  .catch((error) => {
+    // Handle any errors that occurred during data retrieval
+    console.error("Error:", error);
+  });
